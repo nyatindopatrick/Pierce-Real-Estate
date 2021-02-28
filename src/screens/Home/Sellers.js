@@ -40,7 +40,7 @@ export default function Sellers() {
           />
         }
         body={
-          <PricingCard.FloatCard icon="fa-money" header="Pricing">
+          <PricingCard.PriceCard icon="fa-money" header="Pricing">
             <PricingCard.PriceItem>
               For sale signboard from $300
             </PricingCard.PriceItem>
@@ -60,7 +60,7 @@ export default function Sellers() {
               Digital still and moving; up and downloadable imaging from $100
               per hour
             </PricingCard.PriceItem>
-          </PricingCard.FloatCard>
+          </PricingCard.PriceCard>
         }
       />
     </>

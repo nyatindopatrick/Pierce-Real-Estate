@@ -44,7 +44,7 @@ export default function Advertising() {
           />
         }
         body={
-          <PricingCard.FloatCard icon="fa-money" header="Pricing">
+          <PricingCard.PriceCard icon="fa-money" header="Pricing">
             <PricingCard.PriceItem>
               Print local messenger from ?
             </PricingCard.PriceItem>
@@ -54,7 +54,7 @@ export default function Advertising() {
             <PricingCard.PriceItem>
               Specialist colour print media magazines from ?
             </PricingCard.PriceItem>
-          </PricingCard.FloatCard>
+          </PricingCard.PriceCard>
         }
       />
     </>

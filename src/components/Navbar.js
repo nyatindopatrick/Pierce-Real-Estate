@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Navbar() {
@@ -6,20 +6,18 @@ export default function Navbar() {
   const [isActive, setActive] = useState(path);
 
   const addActive = (page) => setActive(page);
-  useEffect(() => {
-    const menuIcon = document.getElementById('menu-icon');
+
+  const toggleMobileNav = () => {
     const slideoutMenut = document.getElementById('slideout-menu');
 
-    menuIcon.addEventListener('click', function () {
-      if (slideoutMenut.style.opacity === '1') {
-        slideoutMenut.style.opacity = '0';
-        slideoutMenut.style.pointerEvents = 'none';
-      } else {
-        slideoutMenut.style.opacity = '1';
-        slideoutMenut.style.pointerEvents = 'auto';
-      }
-    });
-  }, []);
+    if (slideoutMenut.style.opacity === '1') {
+      slideoutMenut.style.opacity = '0';
+      slideoutMenut.style.pointerEvents = 'none';
+    } else {
+      slideoutMenut.style.opacity = '1';
+      slideoutMenut.style.pointerEvents = 'auto';
+    }
+  };
 
   return (
     <>
@@ -43,7 +41,7 @@ export default function Navbar() {
             <span className="color-orange">Pierce</span> Real Estate
           </Link>
         </div>
-        <div id="menu-icon">
+        <div id="menu-icon" onClick={toggleMobileNav}>
           <i className="fa fa-bars"></i>
         </div>
         <ul>
