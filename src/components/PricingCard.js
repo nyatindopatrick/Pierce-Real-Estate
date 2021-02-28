@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const FloatCard = ({ children, header = null, icon=null }) => {
+export const PriceCard = ({ children, header = null, icon=null }) => {
   return (
     <div className="pricing">
       <ul className="price">
@@ -13,10 +13,10 @@ export const FloatCard = ({ children, header = null, icon=null }) => {
   );
 };
 
-export const FloatItem = ({ children }) => {
+export const PriceItem = ({ children }) => {
   return <li>{children}</li>;
 };
 
-const FloatingCard = { FloatCard, FloatItem };
+const PricingCard = { PriceCard, PriceItem };
 
-export default FloatingCard;
+export default PricingCard;

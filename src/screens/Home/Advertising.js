@@ -1,10 +1,9 @@
 import React from 'react';
 import {
   Card,
-  FloatingCard,
+  PricingCard,
   Header,
   List,
-  SubList,
   Service,
 } from '../../components/index';
 
@@ -24,14 +23,14 @@ export default function Advertising() {
                 <ListItem>Specialist colour print media magazines etc</ListItem>
                 <ListItem
                   subList={
-                    <SubList>
+                    <ul>
                       <li>Realestate </li>
                       <li>Domain </li>
                       <li>Pierce Real Estate </li>
                       <li>Gumtree </li>
                       <li>Facebook </li>
                       <li>Shareagent </li>
-                    </SubList>
+                    </ul>
                   }
                 >
                   Social media, internet websites:
@@ -45,17 +44,17 @@ export default function Advertising() {
           />
         }
         body={
-          <FloatingCard.FloatCard icon="fa-money" header="Pricing">
-            <FloatingCard.FloatItem>
+          <PricingCard.FloatCard icon="fa-money" header="Pricing">
+            <PricingCard.PriceItem>
               Print local messenger from ?
-            </FloatingCard.FloatItem>
-            <FloatingCard.FloatItem>
+            </PricingCard.PriceItem>
+            <PricingCard.PriceItem>
               Print statewide from ?
-            </FloatingCard.FloatItem>
-            <FloatingCard.FloatItem>
+            </PricingCard.PriceItem>
+            <PricingCard.PriceItem>
               Specialist colour print media magazines from ?
-            </FloatingCard.FloatItem>
-          </FloatingCard.FloatCard>
+            </PricingCard.PriceItem>
+          </PricingCard.FloatCard>
         }
       />
     </>

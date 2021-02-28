@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Card,
-  FloatingCard,
+  PricingCard,
   Header,
   List,
   Service,
@@ -40,27 +40,27 @@ export default function Sellers() {
           />
         }
         body={
-          <FloatingCard.FloatCard icon="fa-money" header="Pricing">
-            <FloatingCard.FloatItem>
+          <PricingCard.FloatCard icon="fa-money" header="Pricing">
+            <PricingCard.PriceItem>
               For sale signboard from $300
-            </FloatingCard.FloatItem>
-            <FloatingCard.FloatItem>
+            </PricingCard.PriceItem>
+            <PricingCard.PriceItem>
               Open inpection boards $100 each (includes site erection and
               delivery)
-            </FloatingCard.FloatItem>
-            <FloatingCard.FloatItem>
+            </PricingCard.PriceItem>
+            <PricingCard.PriceItem>
               Colour brochures from:
               <br /> $50 per 100 (one-sided) <br />
               $80 per 100 (two sided)
-            </FloatingCard.FloatItem>
-            <FloatingCard.FloatItem>
+            </PricingCard.PriceItem>
+            <PricingCard.PriceItem>
               Sketches floor plans from $200
-            </FloatingCard.FloatItem>
-            <FloatingCard.FloatItem>
+            </PricingCard.PriceItem>
+            <PricingCard.PriceItem>
               Digital still and moving; up and downloadable imaging from $100
               per hour
-            </FloatingCard.FloatItem>
-          </FloatingCard.FloatCard>
+            </PricingCard.PriceItem>
+          </PricingCard.FloatCard>
         }
       />
     </>
