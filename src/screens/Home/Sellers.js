@@ -5,9 +5,9 @@ import {
   Header,
   List,
   Service,
+  ListItem
 } from '../../components/index';
 
-const { UnorderedList, ListItem } = List;
 
 export default function Sellers() {
   return (
@@ -17,7 +17,7 @@ export default function Sellers() {
         section={
           <Card
             description={
-              <UnorderedList>
+              <List>
                 <ListItem>
                   Grab yourself a piece of the real estate pie down at the jetty
                   pier on the clean white sand in the black sun, toes in the
@@ -35,7 +35,7 @@ export default function Sellers() {
                   Let your house and land sell itself to the highest offer. How?
                   Just look at the pricing
                 </ListItem>
-              </UnorderedList>
+              </List>
             }
           />
         }

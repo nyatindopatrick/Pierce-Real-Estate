@@ -1,7 +1,14 @@
 import React from 'react';
-import { Card, Header, List, Service } from '../../components/index';
+import { Card, Header, List, Service, ListItem } from '../../components/index';
 
-const { UnorderedList, ListItem } = List;
+const buyers = [
+  'Become a smart "dinky" (double incomes, no kids yet) buyer with Pierce Real Estate.',
+  'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, aliquam!',
+  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus, quos.',
+  'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, libero?',
+  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus, quos.',
+  'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, libero?',
+];
 
 export default function Buyers() {
   return (
@@ -11,32 +18,11 @@ export default function Buyers() {
         section={
           <Card
             description={
-              <UnorderedList>
-                <ListItem>
-                  Become a smart "dinky" (double incomes, no kids yet) buyer
-                  with Pierce Real Estate.
-                </ListItem>
-                <ListItem>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Sint, aliquam!
-                </ListItem>
-                <ListItem>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Possimus, quos.
-                </ListItem>
-                <ListItem>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Molestias, libero?
-                </ListItem>
-                <ListItem>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Possimus, quos.
-                </ListItem>
-                <ListItem>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Molestias, libero?
-                </ListItem>
-              </UnorderedList>
+              <List>
+                {buyers.map((item, idx) => (
+                  <ListItem key={idx}>{item}</ListItem>
+                ))}
+              </List>
             }
           />
         }

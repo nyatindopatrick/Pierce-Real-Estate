@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+const navLinks = [
+  { name: 'Home', link: '/' },
+  { name: 'About', link: '/about' },
+  { name: 'Contacts', link: '/contact' },
+];
+
 export default function Navbar() {
   const path = window.location.pathname;
   const [isActive, setActive] = useState(path);
@@ -23,15 +29,11 @@ export default function Navbar() {
     <>
       <div id="slideout-menu">
         <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contacts</Link>
-          </li>
+          {navLinks.map(({ name, link }, idx) => (
+            <li key={idx}>
+              <Link to={link}>{name}</Link>
+            </li>
+          ))}
         </ul>
       </div>
 
@@ -45,33 +47,17 @@ export default function Navbar() {
           <i className="fa fa-bars"></i>
         </div>
         <ul>
-          <li>
-            <Link
-              onClick={() => addActive('/')}
-              className={isActive === '/' ? 'active' : null}
-              to="/"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/about"
-              onClick={() => addActive('/about')}
-              className={isActive === '/about' ? 'active' : null}
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/contact"
-              onClick={() => addActive('/contact')}
-              className={isActive === '/contact' ? 'active' : null}
-            >
-              Contacts
-            </Link>
-          </li>
+          {navLinks.map(({ name, link }, idx) => (
+            <li key={idx}>
+              <Link
+                onClick={() => addActive(link)}
+                className={isActive === link ? 'active' : null}
+                to={link}
+              >
+                {name}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </>

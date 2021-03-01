@@ -4,10 +4,32 @@ import {
   PricingCard,
   Header,
   List,
+  ListItem,
   Service,
 } from '../../components/index';
 
-const { UnorderedList, ListItem } = List;
+const data = [
+  { listItem: 'Print local messenger' },
+  { listItem: 'Print statewide' },
+  {
+    listItem: 'Specialist colour print media magazines etc',
+  },
+  {
+    listItem: 'Social media, internet websites:',
+    subList: [
+      'Realestate',
+      'Domain',
+      'Pierce Real Estate',
+      'Gumtree',
+      'Facebook',
+      'Shareagent',
+    ],
+  },
+  {
+    listItem:
+      'Or choose your own places, local community noticeboards,letterbox drops',
+  },
+];
 
 export default function Advertising() {
   return (
@@ -17,29 +39,25 @@ export default function Advertising() {
         section={
           <Card
             description={
-              <UnorderedList>
-                <ListItem>Print local messenger</ListItem>
-                <ListItem>Print statewide</ListItem>
-                <ListItem>Specialist colour print media magazines etc</ListItem>
-                <ListItem
-                  subList={
-                    <ul>
-                      <li>Realestate </li>
-                      <li>Domain </li>
-                      <li>Pierce Real Estate </li>
-                      <li>Gumtree </li>
-                      <li>Facebook </li>
-                      <li>Shareagent </li>
-                    </ul>
-                  }
-                >
-                  Social media, internet websites:
-                </ListItem>
-                <ListItem>
-                  Or choose your own places, local community noticeboards,
-                  letterbox drops
-                </ListItem>
-              </UnorderedList>
+              <List>
+                {data.map(({ listItem, subList }, i) => (
+                  <ListItem
+                    key={i}
+                    subList={
+                      subList && (
+                        <ul>
+                          {subList &&
+                            subList.map((item, idx) => (
+                              <li key={idx}>{item}</li>
+                            ))}
+                        </ul>
+                      )
+                    }
+                  >
+                    {listItem}
+                  </ListItem>
+                ))}
+              </List>
             }
           />
         }

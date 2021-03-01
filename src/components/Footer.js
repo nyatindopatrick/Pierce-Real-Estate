@@ -1,34 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Footer() {
+const navigate = [
+  { text: 'Home', path: '/' },
+  { text: 'About', path: '/about' },
+  { text: 'Sellers', path: '/#lnk-sellers' },
+  { text: 'Advertising', path: '/!#' },
+  { text: 'Insurance', path: '/!#' },
+  { text: 'Buyers', path: '/!#' },
+  { text: 'Contact', path: '/!#' },
+];
+
+const icons = [
+  { icon: 'fa-facebook', link: '/!#' },
+  { icon: 'fa-google', link: '/!#' },
+  { icon: 'fa-linkedin', link: '/!#' },
+];
+
+export default function Footer({ children }) {
   return (
     <footer>
       <div className="left-footer">
         <h3>NAVIGATE</h3>
         <p></p>
         <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <a href="/#lnk-sellers">Sellers</a>
-          </li>
-          <li>
-            <Link to="/!#">Advertising</Link>
-          </li>
-          <li>
-            <Link to="/!#">Insurance</Link>
-          </li>
-          <li>
-            <Link to="/!#">Buyers</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
+          {navigate.map((item, idx) => (
+            <li key={idx}>
+              <Link to={item.path}>{item.text}</Link>
+            </li>
+          ))}
         </ul>
         <p></p>
       </div>
@@ -48,21 +48,13 @@ export default function Footer() {
         <h3>STAY CONNECTED</h3>
         <div id="social-media-footer">
           <ul>
-            <li>
-              <Link to="/!#">
-                <i className="fa fa-facebook"></i>
-              </Link>
-            </li>
-            <li>
-              <Link to="/!#">
-                <i className="fa fa-google"></i>
-              </Link>
-            </li>
-            <li>
-              <Link to="/!#">
-                <i className="fa fa-linkedin"></i>
-              </Link>
-            </li>
+            {icons.map((item, idx) => (
+              <li key={idx}>
+                <Link to="/!#">
+                  <i className={`fa ${item.icon}`}></i>
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
         <p>Copyright © Pierce Real Estate. All Rights Reserved.</p>

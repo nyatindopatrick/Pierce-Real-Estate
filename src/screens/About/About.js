@@ -1,7 +1,6 @@
 import React from 'react';
-import { Card, Header, List, Service } from '../../components/index';
+import { Card, Header, List, Service, ListItem } from '../../components/index';
 
-const { UnorderedList, ListItem } = List;
 
 export default function About() {
   return (
@@ -11,7 +10,7 @@ export default function About() {
         section={
           <Card
             description={
-              <UnorderedList>
+              <List>
                 <ListItem>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet
                   nemo ea ex consequuntur illum asperiores omnis sit eaque
@@ -27,7 +26,7 @@ export default function About() {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
                   quibusdam
                 </ListItem>
-              </UnorderedList>
+              </List>
             }
             text={
               <>

@@ -1,7 +1,5 @@
 import React from 'react';
-import { Card, Header, List, Service } from '../../components/index';
-
-const { UnorderedList, ListItem } = List;
+import { Card, Header, List, Service, ListItem } from '../../components/index';
 
 export default function Contacts() {
   return (
@@ -11,7 +9,7 @@ export default function Contacts() {
         section={
           <Card
             description={
-              <UnorderedList>
+              <List>
                 <ListItem header="LOCATION ">
                   Lorem ipsum dolor sit amet consectetur
                 </ListItem>
@@ -23,7 +21,7 @@ export default function Contacts() {
                   <br />
                   Phone: +54 356 945234
                 </ListItem>
-              </UnorderedList>
+              </List>
             }
           />
         }
