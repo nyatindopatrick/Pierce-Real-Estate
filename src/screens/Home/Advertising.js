@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import {
   Card,
@@ -36,9 +37,9 @@ export default function Advertising() {
     <>
       <Header icon="fa-clipboard">Advertising</Header>
       <Service
-        section={
+        section={(
           <Card
-            description={
+            description={(
               <List>
                 {data.map(({ listItem, subList }, i) => (
                   <ListItem
@@ -46,8 +47,8 @@ export default function Advertising() {
                     subList={
                       subList && (
                         <ul>
-                          {subList &&
-                            subList.map((item, idx) => (
+                          {subList
+                            && subList.map((item, idx) => (
                               <li key={idx}>{item}</li>
                             ))}
                         </ul>
@@ -58,10 +59,10 @@ export default function Advertising() {
                   </ListItem>
                 ))}
               </List>
-            }
+            )}
           />
-        }
-        body={
+        )}
+        body={(
           <PricingCard.PriceCard icon="fa-money" header="Pricing">
             <PricingCard.PriceItem>
               Print local messenger from ?
@@ -73,7 +74,7 @@ export default function Advertising() {
               Specialist colour print media magazines from ?
             </PricingCard.PriceItem>
           </PricingCard.PriceCard>
-        }
+        )}
       />
     </>
   );

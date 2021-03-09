@@ -7,7 +7,7 @@ export default function Header({
 }) {
   return (
     <h2 className="page-heading">
-      <span className={`fa ${icon} ${color}`}></span>{" "}
+      <span className={`fa ${icon} ${color}`} />
       {children}
     </h2>
   );

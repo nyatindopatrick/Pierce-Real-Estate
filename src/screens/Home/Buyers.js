@@ -1,5 +1,8 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
-import { Card, Header, List, Service, ListItem } from '../../components/index';
+import {
+  Card, Header, List, Service, ListItem,
+} from '../../components/index';
 
 const buyers = [
   'Become a smart "dinky" (double incomes, no kids yet) buyer with Pierce Real Estate.',
@@ -15,17 +18,17 @@ export default function Buyers() {
     <>
       <Header icon="fa-dollar">Buyers</Header>
       <Service
-        section={
+        section={(
           <Card
-            description={
+            description={(
               <List>
                 {buyers.map((item, idx) => (
                   <ListItem key={idx}>{item}</ListItem>
                 ))}
               </List>
-            }
+            )}
           />
-        }
+        )}
       />
     </>
   );

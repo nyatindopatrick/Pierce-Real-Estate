@@ -30,7 +30,7 @@ a {
 
 /*Banner*/
 
-#banner {
+.banner {
   height: 100vh;
   display: flex;
   align-items: center;
@@ -48,6 +48,9 @@ a {
     border-radius: 8px;
     padding: 0 24px;
     font-size: 24px;
+  }
+  span {
+    color: black;
   }
 }
 
@@ -91,58 +94,13 @@ nav {
   color: #ba3f00;
 }
 
-#logo-img {
-  display: flex;
-  height: 100%;
-  background: #111;
-  padding: 0 32px;
-  align-items: center;
-  color: white;
-  transition: 0.4s;
-
-  img {
-    height: 60px;
-  }
-
-  &:hover {
-    background: black;
-  }
-}
-
-#menu-icon {
+.menu-icon {
   height: 100%;
   font-size: 28px;
   padding: 0 4px;
   color: #eee;
   display: none;
   align-items: none;
-}
-
-#slideout-menu {
-  display: none;
-  background: #2d3436;
-  z-index: 100;
-  position: fixed;
-  transition: 0.4s;
-  margin-top: 72px;
-  width: 100%;
-  text-align: center;
-  opacity: 0;
-  pointer-events: none;
-
-  ul {
-    list-style: none;
-    padding: 0 32px;
-
-    li {
-      padding: 8px;
-    }
-  }
-
-  a {
-    font-size: 20px;
-    color: white;
-  }
 }
 
 section {
@@ -173,10 +131,6 @@ section {
   color: #e69824;
 }
 
-.color-banner {
-  color: black;
-}
-
 /*Blog list page*/
 
 .page-heading {
@@ -200,11 +154,11 @@ section {
 
 /* Single service*/
 
-#service {
+.service {
   display: flex;
 }
 
-#service-desc {
+.service-desc {
   /*display:flex;
     flex-direction: column;*/
   width: 70%;
@@ -261,126 +215,23 @@ section {
 
 /* List items */
 
-/*============================= footer ======================================*/
-
-footer {
-  background: black;
-  padding: 8px;
-  color: #eee;
-  display: flex;
-  margin-top: 4rem;
-
-  a {
-    color: white;
-  }
-
-  .left-footer {
-    flex: 1;
-    border-right: 1px solid #ba3f00;
-    padding-left: 30px;
-  }
-
-  .middle-footer {
-    flex: 2;
-
-    /*border-right: 1px solid red;*/
-    border-right: 1px solid #ba3f00;
-    padding-left: 30px;
-  }
-
-  .left-footer ul {
-    padding: 0;
-    list-style: none;
-    line-height: 1.5;
-  }
-
-  .right-footer {
-    flex: 3;
-    padding: 8px;
-    text-align: center;
-  }
-
-  #social-media-footer {
-    a {
-      .fa-facebook,
-      .fa-google,
-      .fa-linkedin {
-        color: white;
-        transition: 0.4s;
-      }
-    }
-
-    ul {
-      display: flex;
-      list-style: none;
-      justify-content: center;
-      padding: 0;
-
-      li {
-        font-size: 48px;
-        padding: 16px;
-        transition: 0.4s;
-
-        &:hover a {
-          .fa-google {
-            color: red;
-          }
-
-          .fa-facebook {
-            color: #3b5998;
-          }
-
-          .fa-linkedin {
-            background: #3b5998;
-            color: white;
-            border-radius: 3px;
-          }
-        }
-      }
-    }
-  }
-}
-
 /*============================== Media =====================================*/
 @media (max-width: 900px) {
-  nav ul,
-  .left-footer {
-    display: none;
-  }
-
-  #menu-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #slideout-menu {
-    display: block;
-  }
-
-  #searchbox {
-    display: none;
-  }
-
-  #service-desc {
+  .service-desc {
     width: 100%;
     border-left: 0;
   }
 
-  #sidebar {
-    display: none;
-  }
-
-  #service {
+  .service {
     flex-direction: column;
   }
 
-  #pricing {
+  .pricing {
     width: 100%;
     border-left: 0;
   }
 
-  #map {
+  .map {
     width: 100%;
   }
 }
@@ -401,40 +252,6 @@ footer {
       width: 100%;
     }
   }
-
-  footer {
-    flex-direction: column;
-    text-align: center;
-
-    .left-footer {
-      flex: 1;
-      border-right: 0;
-      padding-left: 0;
-    }
-
-    .middle-footer {
-      border-right: 0;
-      padding-left: 0;
-    }
-
-    .right-footer {
-      background: #dbc6ad;
-      color: black;
-
-      a {
-        color: black;
-      }
-    }
-
-    #social-media-footer a {
-      .fa-facebook,
-      .fa-google,
-      .fa-linkedin {
-        color: black;
-        transition: 0.4s;
-      }
-    }
-  }
 }
 
 @media (max-width: 680px) {
@@ -446,16 +263,12 @@ footer {
     font-size: 48px;
   }
 
-  #banner h3 {
+  .banner h3 {
     font-size: 20px;
   }
 
   .card {
     text-align: center;
-  }
-
-  #logo-img {
-    padding: 0;
   }
 }
 

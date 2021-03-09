@@ -5,4 +5,6 @@ import List from './List';
 import Service from './Service';
 import ListItem from './ListItem';
 
-export { Card, PricingCard, Header, List, Service, ListItem };
+export {
+  Card, PricingCard, Header, List, Service, ListItem,
+};

@@ -7,9 +7,11 @@ import Sellers from './Sellers';
 export default function Home() {
   return (
     <>
-      <div id="banner">
+      <div className="banner">
         <h1>
-          Welcome to <span className="color-banner">Pierce</span> Real Estate
+          Welcome to
+          <span> Pierce </span>
+          Real Estate
         </h1>
       </div>
       <main>

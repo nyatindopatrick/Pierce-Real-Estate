@@ -5,18 +5,17 @@ import {
   Header,
   List,
   Service,
-  ListItem
+  ListItem,
 } from '../../components/index';
-
 
 export default function Sellers() {
   return (
     <>
-      <Header icon="fa-home">Sellers</Header>
+      <Header icon="fa-home" id="lnk-sellers">Sellers</Header>
       <Service
-        section={
+        section={(
           <Card
-            description={
+            description={(
               <List>
                 <ListItem>
                   Grab yourself a piece of the real estate pie down at the jetty
@@ -36,10 +35,10 @@ export default function Sellers() {
                   Just look at the pricing
                 </ListItem>
               </List>
-            }
+            )}
           />
-        }
-        body={
+        )}
+        body={(
           <PricingCard.PriceCard icon="fa-money" header="Pricing">
             <PricingCard.PriceItem>
               For sale signboard from $300
@@ -50,7 +49,10 @@ export default function Sellers() {
             </PricingCard.PriceItem>
             <PricingCard.PriceItem>
               Colour brochures from:
-              <br /> $50 per 100 (one-sided) <br />
+              <br />
+              {' '}
+              $50 per 100 (one-sided)
+              <br />
               $80 per 100 (two sided)
             </PricingCard.PriceItem>
             <PricingCard.PriceItem>
@@ -61,7 +63,7 @@ export default function Sellers() {
               per hour
             </PricingCard.PriceItem>
           </PricingCard.PriceCard>
-        }
+        )}
       />
     </>
   );

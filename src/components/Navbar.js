@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable react/no-array-index-key */
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const navLinks = [
@@ -11,10 +14,12 @@ export default function Navbar() {
   const path = window.location.pathname;
   const [isActive, setActive] = useState(path);
 
-  const addActive = (page) => setActive(page);
+  const navExpand = useRef();
+
+  const addActive = page => setActive(page);
 
   const toggleMobileNav = () => {
-    const slideoutMenut = document.getElementById('slideout-menu');
+    const slideoutMenut = navExpand.current;
 
     if (slideoutMenut.style.opacity === '1') {
       slideoutMenut.style.opacity = '0';
@@ -27,7 +32,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div id="slideout-menu">
+      <div ref={navExpand} className="mobile-menu">
         <ul>
           {navLinks.map(({ name, link }, idx) => (
             <li key={idx}>
@@ -37,14 +42,15 @@ export default function Navbar() {
         </ul>
       </div>
 
-      <nav>
-        <div id="logo-img">
+      <nav className="top-navigation">
+        <div className="logo-img">
           <Link to="/">
-            <span className="color-orange">Pierce</span> Real Estate
+            <span className="color-orange">Pierce </span>
+            Real Estate
           </Link>
         </div>
-        <div id="menu-icon" onClick={toggleMobileNav}>
-          <i className="fa fa-bars"></i>
+        <div className="menu-icon" onClick={toggleMobileNav}>
+          <i className="fa fa-bars" />
         </div>
         <ul>
           {navLinks.map(({ name, link }, idx) => (
